@@ -1,8 +1,8 @@
 package es.uji.commons.web.template;
 
 import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.TemplateMode;
-import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
+import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
+import org.thymeleaf.templateresolver.TemplateResolver;
 
 public class TemplateEngineFactory
 {
@@ -15,9 +15,9 @@ public class TemplateEngineFactory
 
     private static void initializeTemplateEngine(boolean cacheable, Long timeToLive)
     {
-        ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
-        templateResolver.setTemplateMode(TemplateMode.XHTML);
-        templateResolver.setPrefix("/WEB-INF/templates/");
+        TemplateResolver templateResolver = new ClassLoaderTemplateResolver();
+        templateResolver.setTemplateMode("XHTML");
+        templateResolver.setPrefix("/templates/");
         templateResolver.setSuffix(".html");
         templateResolver.setCacheable(cacheable);
         templateResolver.setCacheTTLMs(timeToLive);
