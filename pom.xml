@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>es.uji.commons</groupId>
   <artifactId>uji-commons-web-template</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.3-SNAPSHOT</version>
   <name>uji-commons-web-template</name>
 
   <dependencies>
@@ -40,8 +40,8 @@
   </dependencies>
 
   <scm>
-    <connection>scm:svn:https://universitatjaumei.jira.com/svn/COM/uji-commons-web-template/tags/uji-commons-web-template_0.0.2</connection>
-    <url>https://universitatjaumei.jira.com/svn/COM/uji-commons-web-template/tags/uji-commons-web-template_0.0.2</url>
+    <connection>scm:svn:https://universitatjaumei.jira.com/svn/COM/uji-commons-web-template/trunk</connection>
+    <url>https://universitatjaumei.jira.com/svn/COM/uji-commons-web-template/trunk</url>
   </scm>
 
   <distributionManagement>
