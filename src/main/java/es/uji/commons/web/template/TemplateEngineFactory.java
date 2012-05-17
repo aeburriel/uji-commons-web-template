@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.messageresolver.IMessageResolver;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.thymeleaf.templateresolver.TemplateResolver;
 
@@ -23,7 +24,8 @@ public class TemplateEngineFactory
 
         TemplateEngine templateEngine = new TemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
-
+        templateEngine.setMessageResolver(new OneFileMessageResolver());
+        
         return templateEngine;
     }
 
