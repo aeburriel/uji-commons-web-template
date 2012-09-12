@@ -16,7 +16,9 @@ import org.thymeleaf.context.IContext;
 public class PDFTemplate extends GenericTemplate implements Template
 {
     private static Logger log = Logger.getLogger(PDFTemplate.class);
-    private final Locale locale;
+    
+    private Locale locale;
+    private String application;
     
     public PDFTemplate(String name)
     {
@@ -29,7 +31,15 @@ public class PDFTemplate extends GenericTemplate implements Template
         
         this.locale = locale;
     }
-    
+
+    public PDFTemplate(String name, Locale locale, String application)
+    {
+        super(name);
+        
+        this.locale = locale;
+        this.application = application;
+    }
+
     public byte[] pdf(String data) throws Exception
     {
         Pipeline<SAXPipelineComponent> pipeline = new NonCachingPipeline<SAXPipelineComponent>();
@@ -48,7 +58,7 @@ public class PDFTemplate extends GenericTemplate implements Template
     public byte[] process()
     {
         TemplateEngine templateEngine = TemplateEngineFactory.getTemplateEngine("XML",
-                "/templates/", ".xml");
+                "/templates/", ".xml", application);
 
         IContext context = new Context(locale);
         context.getVariables().putAll(properties);

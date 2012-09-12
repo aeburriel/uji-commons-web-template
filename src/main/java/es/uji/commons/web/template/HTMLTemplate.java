@@ -9,7 +9,8 @@ import org.thymeleaf.context.IContext;
 public class HTMLTemplate extends GenericTemplate implements Template
 {
     private final Locale locale;
-
+    private String application;
+    
     public HTMLTemplate(String name)
     {
         this(name, new Locale("ca"));
@@ -22,11 +23,19 @@ public class HTMLTemplate extends GenericTemplate implements Template
         this.locale = locale;
     }
 
+    public HTMLTemplate(String name, Locale locale, String application)
+    {
+        super(name);
+
+        this.locale = locale;
+        this.application = application;
+    }
+
     @Override
     public byte[] process()
     {
         TemplateEngine templateEngine = TemplateEngineFactory.getTemplateEngine("XHTML",
-                "/templates/", ".html");
+                "/templates/", ".html", this.application);
 
         IContext context = new Context(locale);
         context.getVariables().putAll(properties);

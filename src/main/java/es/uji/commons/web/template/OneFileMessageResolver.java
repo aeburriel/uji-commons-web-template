@@ -17,11 +17,15 @@ public class OneFileMessageResolver extends AbstractMessageResolver
     private static Logger log = Logger.getLogger(OneFileMessageResolver.class);
 
     private Map<String, Properties> configurationRegistry;
-
-    public OneFileMessageResolver()
+   
+    private String application;
+    
+    public OneFileMessageResolver(String application)
     {
         super();
+        
         configurationRegistry = new HashMap<String, Properties>();
+        this.application = application;
     }
 
     @Override
@@ -55,7 +59,7 @@ public class OneFileMessageResolver extends AbstractMessageResolver
         {
             Properties diskConfiguration = new Properties();
             diskConfiguration.load(new FileInputStream(MessageFormat.format(
-                    "/etc/uji/ocw/i18n/i18n_{0}.properties", language)));
+                    "/etc/uji/{0}/i18n/i18n_{1}.properties", this.application, language)));
             configurationRegistry.put(language, diskConfiguration);
         }
         catch (Exception e)
