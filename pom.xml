@@ -13,7 +13,7 @@
       <version>2.5</version>
       <scope>provided</scope>
     </dependency>
-    
+
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
@@ -46,8 +46,8 @@
   </dependencies>
 
   <scm>
-    <connection>scm:svn:https://universitatjaumei.jira.com/svn/COM/uji-commons-web-template/trunk</connection>
-    <url>https://universitatjaumei.jira.com/svn/COM/uji-commons-web-template/trunk</url>
+    <connection>scm:svn:http://jira.uji.es/repos/uji/COM/uji-commons-web-template/trunk</connection>
+    <url>http://jira.uji.es/repos/uji/COM/uji-commons-web-template/trunk</url>
   </scm>
 
   <distributionManagement>
