@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
+import org.thymeleaf.templateresolver.FileTemplateResolver;
 import org.thymeleaf.templateresolver.TemplateResolver;
 
 public class TemplateEngineFactory
@@ -16,7 +16,7 @@ public class TemplateEngineFactory
     private static TemplateEngine initializeTemplateEngine(String templateMode, String prefix,
             String sufix, boolean cacheable, Long timeToLive, String application)
     {
-        TemplateResolver templateResolver = new ClassLoaderTemplateResolver();
+        TemplateResolver templateResolver = new FileTemplateResolver();
         templateResolver.setTemplateMode(templateMode);
         templateResolver.setPrefix(prefix);
         templateResolver.setSuffix(sufix);

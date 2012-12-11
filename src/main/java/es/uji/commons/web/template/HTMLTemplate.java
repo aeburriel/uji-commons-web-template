@@ -34,8 +34,8 @@ public class HTMLTemplate extends GenericTemplate implements Template
     @Override
     public byte[] process()
     {
-        TemplateEngine templateEngine = TemplateEngineFactory.getTemplateEngine("XHTML",
-                "/templates/", ".html", this.application);
+        TemplateEngine templateEngine = TemplateEngineFactory.getTemplateEngine("HTML5",
+                "/etc/uji/templates/", ".html", this.application);
 
         IContext context = new Context(locale);
         context.getVariables().putAll(properties);
