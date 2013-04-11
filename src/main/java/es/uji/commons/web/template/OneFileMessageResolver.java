@@ -1,6 +1,8 @@
 package es.uji.commons.web.template;
 
 import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.StringReader;
 import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Locale;
@@ -23,7 +25,7 @@ public class OneFileMessageResolver extends AbstractMessageResolver
     public OneFileMessageResolver(String application)
     {
         super();
-        
+
         configurationRegistry = new HashMap<String, Properties>();
         this.application = application;
     }
@@ -58,7 +60,7 @@ public class OneFileMessageResolver extends AbstractMessageResolver
         try
         {
             Properties diskConfiguration = new Properties();
-            diskConfiguration.load(new FileInputStream(MessageFormat.format(
+            diskConfiguration.load(new FileReader(MessageFormat.format(
                     "/etc/uji/{0}/i18n/i18n_{1}.properties", this.application, language)));
             configurationRegistry.put(language, diskConfiguration);
         }

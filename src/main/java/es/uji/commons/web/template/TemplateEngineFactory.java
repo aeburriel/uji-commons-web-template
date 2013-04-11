@@ -17,6 +17,7 @@ public class TemplateEngineFactory
             String sufix, boolean cacheable, Long timeToLive, String application)
     {
         TemplateResolver templateResolver = new FileTemplateResolver();
+        templateResolver.setCharacterEncoding("UTF-8");
         templateResolver.setTemplateMode(templateMode);
         templateResolver.setPrefix(prefix);
         templateResolver.setSuffix(sufix);
