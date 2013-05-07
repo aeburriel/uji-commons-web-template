@@ -58,7 +58,7 @@ public class PDFTemplate extends GenericTemplate implements Template
     public byte[] process()
     {
         TemplateEngine templateEngine = TemplateEngineFactory.getTemplateEngine("XML",
-                "/templates/", ".xml", application);
+                "/etc/uji/templates/", ".xml", application);
 
         IContext context = new Context(locale);
         context.getVariables().putAll(properties);
