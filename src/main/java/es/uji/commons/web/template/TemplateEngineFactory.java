@@ -1,5 +1,7 @@
 package es.uji.commons.web.template;
 
+import nz.net.ultraq.thymeleaf.LayoutDialect;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,6 +28,7 @@ public class TemplateEngineFactory
 
         TemplateEngine templateEngine = new TemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
+        templateEngine.addDialect(new LayoutDialect());
 
         if (application != null)
         {
