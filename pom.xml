@@ -6,24 +6,29 @@
   <version>0.0.11-SNAPSHOT</version>
   <name>uji-commons-web-template</name>
 
+  <parent>
+    <groupId>es.uji.commons</groupId>
+    <artifactId>uji-apps</artifactId>
+    <version>0.2.1</version>
+  </parent>
+
   <dependencies>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.13</version>
+      <groupId>org.slf4j</groupId>
+      <artifactId>log4j-over-slf4j</artifactId>
+      <version>${slf4j.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.thymeleaf</groupId>
       <artifactId>thymeleaf</artifactId>
       <version>2.1.2.RELEASE</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>javassist</artifactId>
+          <groupId>org.javassist</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
@@ -55,38 +60,4 @@
     <connection>scm:svn:http://jira.uji.es/repos/uji/COM/uji-commons-web-template/trunk</connection>
     <url>http://jira.uji.es/repos/uji/COM/uji-commons-web-template/trunk</url>
   </scm>
-
-  <distributionManagement>
-    <repository>
-      <id>nexus</id>
-      <url>http://devel01.uji.es:8080/nexus/content/repositories/releases</url>
-    </repository>
-    <snapshotRepository>
-      <id>nexus</id>
-      <url>http://devel01.uji.es:8080/nexus/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.2.1</version>
-        <configuration>
-          <tagNameFormat>${project.name}_@{project.version}</tagNameFormat>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>
