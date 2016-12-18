@@ -6,17 +6,19 @@
   <version>0.1.1-SNAPSHOT</version>
   <name>uji-commons-web-template</name>
 
+<!--
   <parent>
     <groupId>es.uji.commons</groupId>
     <artifactId>uji-apps</artifactId>
     <version>0.2.1</version>
   </parent>
+-->
 
   <dependencies>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>log4j-over-slf4j</artifactId>
-      <version>${slf4j.version}</version>
+      <version>1.7.6</version>
     </dependency>
 
     <dependency>
