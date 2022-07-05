@@ -18,13 +18,13 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>log4j-over-slf4j</artifactId>
-      <version>1.7.6</version>
+      <version>1.7.36</version>
     </dependency>
 
     <dependency>
       <groupId>org.thymeleaf</groupId>
       <artifactId>thymeleaf</artifactId>
-      <version>2.1.2.RELEASE</version>
+      <version>2.1.6.RELEASE</version>
       <exclusions>
         <exclusion>
           <artifactId>javassist</artifactId>
@@ -36,7 +36,7 @@
     <dependency>
       <groupId>nz.net.ultraq.thymeleaf</groupId>
       <artifactId>thymeleaf-layout-dialect</artifactId>
-      <version>1.2.1</version>
+      <version>1.2.9</version>
     </dependency>
 
     <dependency>
@@ -54,7 +54,7 @@
     <dependency>
       <groupId>org.apache.xmlgraphics</groupId>
       <artifactId>fop</artifactId>
-      <version>2.1</version>
+      <version>2.7</version>
     </dependency>
   </dependencies>
 
